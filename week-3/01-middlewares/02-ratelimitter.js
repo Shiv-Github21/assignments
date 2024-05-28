@@ -16,6 +16,26 @@ setInterval(() => {
     numberOfRequestsForUser = {};
 }, 1000)
 
+app.use(function(req, res , next){
+const user = req.headers["user-id"];
+//check if number og req for the user exist checking is it already intialised
+if(numberOfRequestsForUser[user]){  
+  //now inc it 
+  numberOfRequestsForUser[user]++;
+
+if(numberOfRequestsForUser[user] > 5 ){
+  res.status(404).send("no entry now");
+}else{
+  next(); //not more than 5 move to nnext route
+  }
+}
+else{
+  //not initalized then initialized with 1
+  numberOfRequestsForUser[user] = 1;
+  next();
+}
+})
+
 app.get('/user', function(req, res) {
   res.status(200).json({ name: 'john' });
 });
