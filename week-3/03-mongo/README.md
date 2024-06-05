@@ -2,6 +2,7 @@
 
 ### Description
 You need to implement a course selling app. Make sure you setup your own mongodb instance before starting. 
+mongodb+srv://Shiv21:Shivendra21@cluster0.qnee4pj.mongodb.net/
 It needs to support two types of users - 
 1. Admins
 2. Users
@@ -27,8 +28,8 @@ You need to use mongodb to store all the data persistently.
   Input: Headers: { 'username': 'username', 'password': 'password' }, Body: { title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com' }
   Output: { message: 'Course created successfully', courseId: "new course id" }
 - GET /admin/courses
-  Description: Returns all the courses.
-  Input: Headers: { 'username': 'username', 'password': 'password' }
+  Description: Returns all the coursessername': 'username', 'password': '.
+  Input: Headers: { 'upassword' }
   Output: { courses: [ { id: 1, title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com', published: true }, ... ] }
 
 ### User routes
